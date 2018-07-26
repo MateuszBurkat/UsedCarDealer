@@ -1,0 +1,12 @@
+﻿@model UsedCarDealerWebApp.Models.CarsListViewModel
+
+@{
+    ViewBag.Title = "Samochody";
+}
+@foreach (var c in Model.Cars)
+{
+    @Html.Partial("CarSummary", c);
+}
+
+
+

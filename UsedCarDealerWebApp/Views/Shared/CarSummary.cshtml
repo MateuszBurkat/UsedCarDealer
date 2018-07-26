@@ -1,0 +1,26 @@
+﻿@model UsedCarDealer.Domain.Entities.Car
+
+<div class="well">
+    @if (Model.ImageData != null)
+    {
+        <div class="pull-left" style="margin-right: 10px">
+            <img class="img-thumbnail" width="100" height="100" src="@Url.Action("GetImage", "Car", new { Model.CarID })" />
+        </div>
+    }
+    <h3>
+        <strong>
+                     Marka:      @Model.CarBrand
+            <br />   Model:         @Model.CarModel
+        </strong>
+    </h3>
+   
+    <span class="pull-right label label-primary">Cena:  @Model.Price</span>
+        <br />
+    <span class="lead">
+                Rodzaj paliwa: @Model.FuelType
+        <br />  Rok produkcji: @Model.YearProduction
+        <br />  Typ auta:      @Model.TypeCar
+        <br />  Przebieg w km: @Model.Milage
+    </span>
+   
+</div>
