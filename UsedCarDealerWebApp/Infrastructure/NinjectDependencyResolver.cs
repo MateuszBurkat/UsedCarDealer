@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Ninject;
 using System.Web.Mvc;
 using UsedCarDealer.Domain.Concrete;
 using UsedCarDealer.Domain.Abstract;
-using UsedCarDealer.Domain.Entities;
-using Moq;
 using UsedCarDealerWebApp.Infrastructure.Abstract;
 using UsedCarDealerWebApp.Infrastructure.Concrete;
 
@@ -23,8 +19,6 @@ namespace UsedCarDealerWebApp.Infrastructure
             AddBindings();
         }
 
-       
-
         public object GetService(Type serviceType)
         {
             return kernel.TryGet(serviceType);
@@ -36,11 +30,9 @@ namespace UsedCarDealerWebApp.Infrastructure
         }
         private void AddBindings()
         {
-           
-
             kernel.Bind<ICarRepository>().To<EfCarRepository>();
             kernel.Bind<IAuthProvider>().To<FormsAuthProvider>();
         }
     }
-    
-    }
+
+}

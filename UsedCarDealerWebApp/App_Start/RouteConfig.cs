@@ -23,7 +23,8 @@ namespace UsedCarDealerWebApp
                 {
                     controller = "Car",
                     action = "List",
-                    carBrand = (string)null, page = 1
+                    carBrand = (string)null,
+                    page = 1
                 }
             );
 
@@ -40,7 +41,7 @@ namespace UsedCarDealerWebApp
                 new { controller = "Car", action = "List" },
                 new { page = @"\d+" }
                 );
-           
+
 
             routes.MapRoute(null, "{controller}/{action}");
         }

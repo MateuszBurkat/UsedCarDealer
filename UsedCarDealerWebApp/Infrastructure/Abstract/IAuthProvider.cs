@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace UsedCarDealerWebApp.Infrastructure.Abstract
 {
-
     public interface IAuthProvider
     {
         bool Authenticate(string username, string password);

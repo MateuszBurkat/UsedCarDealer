@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using UsedCarDealer.Domain.Abstract;
 using UsedCarDealer.Domain.Entities;
@@ -26,10 +23,10 @@ namespace UsedCarDealerWebApp.Controllers
                 Cars = repository.Cars
                 .Where(c => carBrand == null || c.CarBrand == carBrand),
                 CurrentCarBrand = carBrand
-        };
+            };
             return View(viewModel);
-          }
-        public FileContentResult GetImage (int carID)
+        }
+        public FileContentResult GetImage(int carID)
         {
             Car ca = repository.Cars.FirstOrDefault(c => c.CarID == carID);
             if (ca != null)

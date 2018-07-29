@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using UsedCarDealer.Domain.Abstract;
@@ -22,19 +20,19 @@ namespace UsedCarDealerWebApp.Controllers
             return View(repository.Cars);
         }
 
-        public ViewResult Edit (int carId)
+        public ViewResult Edit(int carId)
         {
             Car car = repository.Cars
                 .FirstOrDefault(c => c.CarID == carId);
             return View(car);
         }
-       
+
         [HttpPost]
         public ActionResult Edit(Car car, HttpPostedFileBase image = null)
         {
             if (ModelState.IsValid)
             {
-                if(image != null)
+                if (image != null)
                 {
                     car.ImageMimeType = image.ContentType;
                     car.ImageData = new byte[image.ContentLength];
@@ -56,7 +54,7 @@ namespace UsedCarDealerWebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete (int carID)
+        public ActionResult Delete(int carID)
         {
             Car deletedCar = repository.DeleteCar(carID);
             if (deletedCar != null)

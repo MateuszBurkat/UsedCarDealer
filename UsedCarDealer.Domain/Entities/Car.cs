@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace UsedCarDealer.Domain.Entities
 {
     public class Car
     {
-        [HiddenInput(DisplayValue=false)]
+        [HiddenInput(DisplayValue = false)]
         public int CarID { get; set; }
 
 
-        [Required(ErrorMessage ="Proszę podać markę samochodu")]
-        [Display(Name="Marka")]
+        [Required(ErrorMessage = "Proszę podać markę samochodu")]
+        [Display(Name = "Marka")]
         public string CarBrand { get; set; }
 
 
@@ -31,7 +26,7 @@ namespace UsedCarDealer.Domain.Entities
 
         [Required(ErrorMessage = "Proszę podać rok produkcji")]
         [Display(Name = "Rok produkcji")]
-        public int YearProduction { get; set; }
+        public int YearProduction {get; set;}
 
 
         [Required(ErrorMessage = "Proszę podać typ nadwozia")]
@@ -54,5 +49,5 @@ namespace UsedCarDealer.Domain.Entities
         public string ImageMimeType { get; set; }
 
     }
-    
+
 }
